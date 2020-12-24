@@ -96,18 +96,6 @@ gamerbit.onEvent(GamerBitPin.P1, GamerBitEvent.Down, function () {
     radio.sendValue("LEFT", LEFT)
     DRIVE_DISPLAY()
 })
-gamerbit.onEvent(GamerBitPin.P0, GamerBitEvent.Down, function () {
-    if (LEFT == -1 && RIGHT == -1) {
-        LEFT = 0
-        RIGHT = 0
-    } else {
-        LEFT = 1
-        RIGHT = 1
-    }
-    radio.sendValue("LEFT", LEFT)
-    radio.sendValue("RIGHT", RIGHT)
-    DRIVE_DISPLAY()
-})
 gamerbit.onEvent(GamerBitPin.P8, GamerBitEvent.Down, function () {
     if (LEFT == 1 && RIGHT == 1) {
         LEFT = 0
@@ -126,6 +114,18 @@ gamerbit.onEvent(GamerBitPin.P2, GamerBitEvent.Down, function () {
     } else {
         RIGHT = 1
     }
+    radio.sendValue("RIGHT", RIGHT)
+    DRIVE_DISPLAY()
+})
+gamerbit.onEvent(GamerBitPin.P0, GamerBitEvent.Down, function () {
+    if (LEFT == -1 && RIGHT == -1) {
+        LEFT = 0
+        RIGHT = 0
+    } else {
+        LEFT = 1
+        RIGHT = 1
+    }
+    radio.sendValue("LEFT", LEFT)
     radio.sendValue("RIGHT", RIGHT)
     DRIVE_DISPLAY()
 })
