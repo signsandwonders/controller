@@ -99,6 +99,9 @@ gamerbit.onEvent(GamerBitPin.P1, GamerBitEvent.Down, function () {
     radio.sendValue("LEFT", LEFT)
     DRIVE_DISPLAY()
 })
+radio.onReceivedString(function (receivedString) {
+    basic.showString(receivedString)
+})
 input.onButtonPressed(Button.B, function () {
     radio.sendValue("READLIGHT", 1)
 })
