@@ -2,7 +2,7 @@ gamerbit.onEvent(GamerBitPin.P12, GamerBitEvent.Down, function () {
     radio.sendValue("SERVO_L", 1)
 })
 input.onButtonPressed(Button.A, function () {
-    radio.sendValue("READTEMP", 1)
+    radio.sendValue("SPEED", 0)
 })
 gamerbit.onEvent(GamerBitPin.P16, GamerBitEvent.Down, function () {
     radio.sendValue("SERVO_R", 1)
@@ -99,11 +99,8 @@ gamerbit.onEvent(GamerBitPin.P1, GamerBitEvent.Down, function () {
     radio.sendValue("LEFT", LEFT)
     DRIVE_DISPLAY()
 })
-radio.onReceivedString(function (receivedString) {
-    basic.showString(receivedString)
-})
 input.onButtonPressed(Button.B, function () {
-    radio.sendValue("READLIGHT", 1)
+    radio.sendValue("SPEED", 1)
 })
 gamerbit.onEvent(GamerBitPin.P8, GamerBitEvent.Down, function () {
     if (LEFT == 1 && RIGHT == 1) {
